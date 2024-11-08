@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Profile Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f69c4;
+    }
+    .light-mode {
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .dark-mode {
+      background-color: #333;
+      color: #000;
+    }
+    .container {
+      padding: 20px;
+    }
+    
+    /* Header and Footer */
+    header, footer {
+      background-color: coral;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    
+    /* Profile Photo */
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #007bff;
+    }
+    
+    /* Theme Switcher */
+    .theme-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Profile Section Styling */
+    .profile-section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .profile-section h4 {
+      color: #007bff;
+      font-weight: bold;
+    }
+    
+    /* Dark Mode Styling for Profile Name */
+    .dark-mode #displayName  {
+      color: white !important;
+    }
+
+    .dark-mode #displayTitle  {
+      color: white !important;
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <!-- Theme Toggle Button -->
+  <div class="theme-switcher">
+    <button class="btn btn-secondary" onclick="toggleTheme()">
+      <i id="themeIcon" class="fas fa-sun"></i>
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h2>Professional Profile</h2>
+  </header>
+
+  <!-- Profile Information Display -->
+  <div id="profileDisplay" class="container">
+    <div class="text-center mb-4">
+      <img id="displayProfileImage" src="boy dp.jpeg" alt="Profile Photo" class="profile-photo">
+      <h3 id="displayName">Muhammad Khan</h3>
+      <p id="displayTitle">Software Engineer</p>
+    </div>
+    
+    <section class="profile-section">
+      <h4>Personal Information</h4>
+      <p id="displayEmail">Email: mk073@gmail.com</p>
+      <p id="displayPhone">Phone: +92 341 00000</p>
+      <p id="displayLocation">Location: Dadu, Pakistan</p>
+    </section>
+
+    <section class="profile-section">
+      <h4>Work Experience</h4>
+      <p id="displayWork">1 year in web development, specializing in frontend and frameworks technologies.</p>
+    </section>
+
+    <section class="profile-section">
+      <h4>Education</h4>
+      <p id="displayEducation">Bachelor's in Computer System from Mehran University.</p>
+    </section>
+
+    <section class="profile-section">
+      <h4>Skills</h4>
+      <p id="displaySkills">JavaScript, React, HTML, CSS, Node.js, SQL</p>
+    </section>
+
+    <section class="profile-section">
+      <h4>Projects</h4>
+      <ul>
+        <li>Project 1: E-commerce website</li>
+        <li>Project 2: Portfolio website</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 MK - All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle between light and dark modes
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      const themeIcon = document.getElementById('themeIcon');
+      if (document.body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    }
+  </script>
+</body>
+</html>
